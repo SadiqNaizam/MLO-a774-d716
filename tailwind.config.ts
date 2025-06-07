@@ -18,6 +18,9 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif']
+      },
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -52,22 +55,26 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				}
+        surface: 'hsl(var(--card))',
+        primaryText: 'hsl(var(--foreground))',
+        secondaryText: 'hsl(var(--muted-foreground))',
+        accentSecondary: '#6EE7B7',
+        success: '#34D399',
+        sidebar: {
+          DEFAULT: 'hsl(var(--sidebar-background))',
+          foreground: 'hsl(var(--sidebar-foreground))'
+        }
 			},
 			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
+        lg: 'var(--radius)',
+				md: 'var(--radius)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
+      boxShadow: {
+        DEFAULT: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
+        sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
+        header: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)'
+      },
 			keyframes: {
 				'accordion-down': {
 					from: {
@@ -92,5 +99,5 @@ export default {
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
-} satisfies Config;
+	plugins: [require("tailwindcss-animate")]
+}
